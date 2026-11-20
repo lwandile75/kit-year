@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kit Year</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Kit Year</h1>
+  <p>Pick a club. A kit it wore appears. Guess the season.</p>
+
+  <!-- Step 1: club picker (JavaScript fills this with buttons) -->
+  <section id="pick-screen">
+    <h2>Choose your club</h2>
+    <div id="club-picker"></div>
+  </section>
+
+  <!-- Step 2: the game (hidden until a club is picked) -->
+  <section id="game" class="hidden">
+    <h2 id="club-name"></h2>
+    <p>Round <span id="round">0</span> | Score <span id="score">0</span></p>
+
+    <div id="kit-display"></div>
+
+    <div id="guess-area">
+      <p id="season-label">2009/10</p>
+      <input id="season-slider" type="range" min="0" max="33" value="17">
+      <button id="lock-btn">Lock in guess</button>
+    </div>
+
+    <div id="result" class="hidden"></div>
+
+    <button id="next-btn" class="hidden">Next kit</button>
+    <button id="change-btn">Change club</button>
+  </section>
+
+  <script src="kits.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

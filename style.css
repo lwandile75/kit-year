@@ -1,0 +1,149 @@
+/* ---------- Colours (the demo's palette) ---------- */
+:root {
+  --bg: #f3f1ec;        /* page background */
+  --surface: #ffffff;   /* cards and panels */
+  --ink: #14201a;       /* main text */
+  --muted: #5b6660;     /* secondary text */
+  --line: #d9d5cb;      /* borders */
+  --accent: #0f5c3a;    /* green: buttons, season number */
+  --accent-ink: #ffffff;/* text on green buttons */
+  --tag: #e8e2d0;       /* kit background, hover */
+}
+
+/* Dark mode: used automatically if the person's device is set to dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1511;
+    --surface: #161f1a;
+    --ink: #ecefe9;
+    --muted: #9aa59e;
+    --line: #2b3730;
+    --accent: #4fcf8d;
+    --accent-ink: #06150d;
+    --tag: #222c25;
+  }
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 36px 20px 64px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.5 "Archivo", system-ui, sans-serif;
+}
+
+h1 {
+  font: 900 clamp(56px, 14vw, 110px)/0.86 "Big Shoulders Display", Impact, sans-serif;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font: 800 28px/1 "Big Shoulders Display", Impact, sans-serif;
+  margin: 0 0 14px;
+}
+
+p { color: var(--muted); }
+
+button {
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hidden { display: none; }
+
+/* ---------- Panels ---------- */
+#pick-screen,
+#game {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+/* ---------- Club buttons ---------- */
+#club-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.club-btn {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.club-btn:hover { border-color: var(--accent); }
+
+/* ---------- Game screen ---------- */
+#club-name { margin-bottom: 4px; }
+
+#kit-display {
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+  margin: 12px 0;
+  padding: 16px;
+  background: var(--tag);
+  border-radius: 6px;
+}
+
+#guess-area { text-align: center; margin-top: 22px; }
+
+#season-label {
+  font: 900 clamp(56px, 14vw, 88px)/0.9 "Big Shoulders Display", Impact, sans-serif;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+
+#season-slider {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+/* Big green buttons */
+#lock-btn,
+#next-btn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 15px;
+  font: 800 24px/1 "Big Shoulders Display", Impact, sans-serif;
+  letter-spacing: 0.02em;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 0;
+  border-radius: 4px;
+}
+
+/* Result box */
+#result {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+/* Small text-style button */
+#change-btn {
+  background: none;
+  border: 0;
+  margin-top: 12px;
+  padding: 0;
+  color: var(--muted);
+  text-decoration: underline;
+  font-size: 14px;
+}
